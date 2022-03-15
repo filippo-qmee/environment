@@ -90,8 +90,8 @@ cask 'font-inconsolata-for-powerline'
 #cask 'firefox-developer-edition'
 
 # apps
-cask 'virtualbox'
-cask 'virtualbox-extension-pack'
+#cask 'virtualbox'
+#cask 'virtualbox-extension-pack'
 #cask 'rdm'
 cask 'vlc'
 #cask 'atom'
