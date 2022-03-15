@@ -48,6 +48,13 @@ echo "update homebrew apps"
   # Remove outdated versions from the cellar
   brew cleanup
 
+# openssl??
+## openssl@3 first in your PATH
+#echo 'export PATH="/opt/homebrew/opt/openssl@3/bin:$PATH"' >> ~/.zshrc
+## For compilers to find openssl@3 you may need to set
+#export LDFLAGS="-L/opt/homebrew/opt/openssl@3/lib"
+#export CPPFLAGS="-I/opt/homebrew/opt/openssl@3/include"
+
 if [ $SHELL != $(which zsh) ] && [[ -z $(sudo cat /etc/shells | grep $(which zsh)) ]]; then
   echo "add homebrew zsh to shells"
   sudo sh -c "echo $(which zsh) >> /etc/shells"
