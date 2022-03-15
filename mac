@@ -42,7 +42,7 @@ echo "update homebrew apps"
     brew install wget
     brew tap Homebrew/bundle
   fi
-  wget -nv https://github.com/filippo-qmee/environment/blob/HEAD/Brewfile -O $MACENV/Brewfile
+  wget -nv https://raw.githubusercontent.com/filippo-qmee/environment/HEAD/Brewfile -O $MACENV/Brewfile
   cd $MACENV
   brew bundle --verbose
   # Remove outdated versions from the cellar
