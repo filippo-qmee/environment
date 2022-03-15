@@ -1,8 +1,9 @@
 #!/bin/bash
 
+MACENV=$HOME/macenv
 if [[ -f $HOME/.zshrc ]]; then source $HOME/.zshrc; fi
 
-mkdir -p macenv/secrets
+mkdir -p $MACENV/secrets
 
 echo "use cloudflare and google for DNS"
 if [[ -z $(networksetup -getdnsservers Wi-Fi 2>&1 | grep "1.0.0.1") ]]; then
@@ -41,8 +42,8 @@ echo "update homebrew apps"
     brew install wget
     brew tap Homebrew/bundle
   fi
-  wget -nv https://raw.githubusercontent.com/ronald05arias/environment/master/Brewfile -O $HOME/macenv/Brewfile
-  cd $HOME/macenv
+  wget -nv https://github.com/filippo-qmee/environment/blob/HEAD/Brewfile -O $MACENV/Brewfile
+  cd $MACENV
   brew bundle --verbose
   # Remove outdated versions from the cellar
   brew cleanup
@@ -61,8 +62,8 @@ fi
 read -p "Do you want to configure Docker services now? [y,n] (Select 'y' ONLY if not using QM later)" -n1 -s CFG_DOCKER
 
 if [[ "$CFG_DOCKER" == "y" ]]; then
-  wget -nv https://raw.githubusercontent.com/ronald05arias/environment/master/docker-compose.yml -O $HOME/macenv/docker-compose.yml
-  cd $HOME/macenv
+  wget -nv https://raw.githubusercontent.com/ronald05arias/environment/master/docker-compose.yml -O $MACENV/docker-compose.yml
+  cd $MACENV
   docker-compose pull
   docker-compose up -d
   docker system prune --force --all
@@ -70,9 +71,9 @@ if [[ "$CFG_DOCKER" == "y" ]]; then
 fi
 
 echo "checking for SSH key, try to restore from secrets if it doesn't exist..."
-  wget -nv https://raw.githubusercontent.com/ronald05arias/environment/master/Rakefile -O $HOME/macenv/Rakefile
-  wget -nv https://raw.githubusercontent.com/ronald05arias/environment/master/secrets/secrets.rake -O $HOME/macenv/secrets/secrets.rake
-  cd $HOME/macenv
+  wget -nv https://raw.githubusercontent.com/ronald05arias/environment/master/Rakefile -O $MACENV/Rakefile
+  wget -nv https://raw.githubusercontent.com/ronald05arias/environment/master/secrets/secrets.rake -O $MACENV/secrets/secrets.rake
+  cd $MACENV
   if [[ ! -f $HOME/.ssh/id_rsa.pub ]]; then
     # it's likely that both history files have been recently created as part of the install process, but we want to
     # overwrite them with the backed up versions that will have an 'older' timestamp
