@@ -26,33 +26,32 @@ cask 'iterm2'
 
 # git
 brew 'git'
-#brew 'git-extras'
-#cask 'gitup'
-#brew 'git-crypt'
-#cask 'keybase'
+brew 'git-extras'
+cask 'gitup'
+brew 'git-crypt'
+cask 'keybase'
 brew 'gpg'
 
 ## development languages
 # ruby with version manager
-#brew 'chruby'
-#brew 'ruby-install'
+brew 'chruby'
+brew 'ruby-install'
 # node
-#brew 'node'
-#brew 'yarn'
+brew 'node'
+brew 'yarn'
 # other
-#brew 'python'
-#brew 'python@2'
-#cask 'java'
-#brew 'go'
-#brew 'scala'
-#brew 'elixir'
+brew 'python'
+cask 'java'
+brew 'go'
+brew 'scala'
+brew 'elixir'
 brew 'terraform'
 
 # database client tools and libs
-#brew 'postgresql'
-#brew 'redis'
-#brew 'rabbitmq'
-#brew 'memcached'
+brew 'postgresql'
+brew 'redis'
+brew 'rabbitmq'
+brew 'memcached'
 
 # utils
 brew 'coreutils'
@@ -67,8 +66,8 @@ brew 'terminal-notifier'
 #brew 'forego'
 brew 'jq'
 #brew 'svn'
-#cask 'monitorcontrol'
-#brew 'cookiecutter'
+cask 'monitorcontrol'
+brew 'cookiecutter'
 
 # heroku
 tap 'heroku/brew'
@@ -99,7 +98,7 @@ cask 'vlc'
 #cask 'flux'
 #cask 'skype'
 #cask 'spotify'
-#cask 'sourcetree'
+cask 'sourcetree'
 #cask 'transmission-remote-gui'
 #cask 'truecrypt71a' #No available Cask for truecrypt71a - http://apple.stackexchange.com/questions/173879/truecrypt-7-1a-requires-mac-os-x-10-4-or-later-on-yosemite-10-10
 #cask 'veracrypt'
@@ -119,7 +118,7 @@ cask 'diffmerge'
 
 #tap 'homebrew/cask-drivers'
 #cask "logitech-options"
-#cask "dbschema"
+cask "dbschema"
 
 # drives
 #cask 'dropbox'
@@ -127,5 +126,5 @@ cask 'diffmerge'
 #cask 'amazon-photos'
 
 # docker for mac
-#cask 'docker'
-#cask 'kitematic'
+cask 'docker'
+cask 'kitematic'
