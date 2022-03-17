@@ -101,7 +101,7 @@ if [[ -z $(brew list --cask | grep 'prey') ]]; then
   open https://panel.preyproject.com/settings
   echo "Type your prey apikey found on your profile page, followed by [ENTER]:"
   read apikey
-  HOMEBREW_NO_ENV_FILTERING=1 HOMEBREW_PREY_SETUP_API_KEY=="$apikey" brew install --cask prey
+  HOMEBREW_PREY_SETUP_API_KEY="$apikey" brew install --cask prey
 fi
 
 if [[ -z $(brew list --cask | grep 'visual-studio-code') ]]; then
