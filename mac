@@ -403,7 +403,7 @@ defaults write com.apple.ActivityMonitor SortDirection -int 0
 # list casks that are outdated
 echo ""
 echo "####################### Outdated Casks ######################"
-brew cask outdated
+brew outdated --cask
 echo "#############################################################"
 echo ""
 
