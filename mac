@@ -62,7 +62,7 @@ fi
 read -p "Do you want to configure Docker services now? [y,n] (Select 'y' ONLY if not using QM later)" -n1 -s CFG_DOCKER
 
 if [[ "$CFG_DOCKER" == "y" ]]; then
-  wget -nv https://raw.githubusercontent.com/ronald05arias/environment/master/docker-compose.yml -O $MACENV/docker-compose.yml
+  wget -nv https://raw.githubusercontent.com/filippo-qmee/environment/master/docker-compose.yml -O $MACENV/docker-compose.yml
   cd $MACENV
   docker-compose pull
   docker-compose up -d
@@ -71,8 +71,8 @@ if [[ "$CFG_DOCKER" == "y" ]]; then
 fi
 
 echo "checking for SSH key, try to restore from secrets if it doesn't exist..."
-  wget -nv https://raw.githubusercontent.com/ronald05arias/environment/master/Rakefile -O $MACENV/Rakefile
-  wget -nv https://raw.githubusercontent.com/ronald05arias/environment/master/secrets/secrets.rake -O $MACENV/secrets/secrets.rake
+  wget -nv https://raw.githubusercontent.com/filippo-qmee/environment/master/Rakefile -O $MACENV/Rakefile
+  wget -nv https://raw.githubusercontent.com/filippo-qmee/environment/master/secrets/secrets.rake -O $MACENV/secrets/secrets.rake
   cd $MACENV
   if [[ ! -f $HOME/.ssh/id_rsa.pub ]]; then
     # it's likely that both history files have been recently created as part of the install process, but we want to
@@ -123,7 +123,7 @@ curl -sSL https://raw.githubusercontent.com/taylor/kiex/master/install | bash -s
 
 if [[ ! -f $HOME/.dotfiles/zshrc ]]; then
   echo "install dotfiles"
-  git clone git@github.com:ronald05arias/dotfiles.git $HOME/.dotfiles
+  git clone git@github.com:filippo-qmee/dotfiles.git $HOME/.dotfiles
   cd $HOME/.dotfiles
   rake install
 fi
@@ -194,7 +194,7 @@ if [[ -z $(defaults read com.googlecode.iterm2 | grep 'd326c889-7564-409b-8b26-d
   echo "configure iTerm"
   defaults write com.googlecode.iterm2 PromptOnQuit -bool false
   defaults write com.googlecode.iterm2 SUEnableAutomaticChecks -bool true
-  wget -nv https://raw.githubusercontent.com/ronald05arias/environment/master/iTerm2/DynamicProfiles/inconsolarized.json -O $HOME/Library/Application\ Support/iTerm2/DynamicProfiles/inconsolarized.json
+  wget -nv https://raw.githubusercontent.com/filippo-qmee/environment/master/iTerm2/DynamicProfiles/inconsolarized.json -O $HOME/Library/Application\ Support/iTerm2/DynamicProfiles/inconsolarized.json
   defaults write com.googlecode.iterm2 "Default Bookmark Guid" "d326c889-7564-409b-8b26-d3671001617e"
 fi
 
