@@ -41,7 +41,7 @@ brew 'node'
 brew 'yarn'
 # other
 brew 'python'
-cask 'java'
+brew 'openjdk'
 brew 'go'
 brew 'scala'
 brew 'elixir'
