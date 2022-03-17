@@ -1,4 +1,4 @@
-Ron's dev Environment
+Filippo's dev Environment
 ========================
 
 Environment is a script to get OSX/macOS or Linux set up as a development machine with common Qmee preferences.
@@ -13,12 +13,7 @@ Installation
 
 Mac
 ```
-bash <(curl -s https://raw.githubusercontent.com/ronald05arias/environment/master/mac)
-```
-
-Linux
-```
-bash <(curl -s https://raw.githubusercontent.com/ronald05arias/environment/master/linux)
+bash <(curl -s https://raw.githubusercontent.com/filippo-qmee/environment/HEAD/mac)
 ```
 
 What is installed
